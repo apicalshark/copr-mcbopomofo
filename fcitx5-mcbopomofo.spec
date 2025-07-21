@@ -6,8 +6,8 @@
 %define __global_ldflags %nil
 
 Name: fcitx5-mcbopomofo
-Version: 2.9.1
-Release: 2
+Version: 2.9.2
+Release: 1
 License: MIT
 Summary:  McBopomofo for fcitx5
 URL: https://github.com/openvanilla/fcitx5-mcbopomofo
