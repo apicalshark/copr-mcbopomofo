@@ -1,13 +1,6 @@
-%undefine _hardened_build
-%define __global_cflags %nil
-%define __global_cxxflags %nil
-%define __global_fflags %nil
-%define __global_fcflags %nil
-%define __global_ldflags %nil
-
 Name: fcitx5-mcbopomofo
 Version: 2.9.2
-Release: 1
+Release: 2
 License: MIT
 Summary:  McBopomofo for fcitx5
 URL: https://github.com/openvanilla/fcitx5-mcbopomofo
@@ -27,8 +20,7 @@ BuildRequires: json-c-devel
 BuildRequires: ninja-build
 BuildRequires: clang-tools-extra
 
-Requires: fcitx5 fcitx5-configtool fcitx5-gtk4 fcitx5-gtk3 fcitx5-gtk
-
+Requires: fcitx5 fcitx5-configtool
 
 %description
 McBopomofo for fcitx5.
