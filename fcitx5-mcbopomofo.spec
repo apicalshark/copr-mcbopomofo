@@ -1,6 +1,6 @@
 Name: fcitx5-mcbopomofo
 Version: 2.9.2
-Release: 2
+Release: 1
 License: MIT
 Summary:  McBopomofo for fcitx5
 URL: https://github.com/openvanilla/fcitx5-mcbopomofo
@@ -20,7 +20,8 @@ BuildRequires: json-c-devel
 BuildRequires: ninja-build
 BuildRequires: clang-tools-extra
 
-Requires: fcitx5 fcitx5-configtool
+Requires: fcitx5
+Requires: fcitx5-configtool
 
 %description
 McBopomofo for fcitx5.
