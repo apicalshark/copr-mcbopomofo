@@ -1,5 +1,5 @@
 Name: fcitx5-mcbopomofo
-Version: 2.9.2
+Version: 2.9.1
 Release: 3
 License: MIT
 Summary:  McBopomofo for fcitx5
