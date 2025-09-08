@@ -22,6 +22,7 @@ BuildRequires: clang-tools-extra
 
 Requires: fcitx5
 Requires: fcitx5-configtool
+Requires: fcitx5-gtk
 
 %description
 McBopomofo for fcitx5.
