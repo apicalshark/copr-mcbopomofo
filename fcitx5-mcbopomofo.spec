@@ -34,7 +34,7 @@ McBopomofo for fcitx5.
 %build
 mkdir build
 pushd build
-cmake ../ -GNinja -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_BUILD_TYPE=Release -DENABLE_CLANG_TIDY=On
+cmake ../ -GNinja -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_BUILD_TYPE=Release
 ninja
 popd
 
