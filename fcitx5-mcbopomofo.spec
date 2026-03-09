@@ -1,52 +1,54 @@
-Name: fcitx5-mcbopomofo
-Version: 2.9.5
-Release: 1
-License: MIT
-Summary:  McBopomofo for fcitx5
-URL: https://github.com/openvanilla/fcitx5-mcbopomofo
-Source0: %{url}/archive/refs/tags/%{version}/fcitx5-mcbopomofo-%{version}.tar.gz
+%global         debug_package %{nil}
+%undefine       _enable_debug_packages
 
-BuildRequires: git
-BuildRequires: gcc g++
-BuildRequires: fcitx5
-BuildRequires: fcitx5-configtool
-BuildRequires: fcitx5-devel
-BuildRequires: cmake
-BuildRequires: extra-cmake-modules
-BuildRequires: gettext
-BuildRequires: fmt-devel
-BuildRequires: libicu-devel
-BuildRequires: json-c-devel
-BuildRequires: ninja-build
-BuildRequires: clang-tools-extra
+Name:           fcitx5-mcbopomofo
+Version:        2.9.5
+Release:        3
+License:        MIT
+Summary:        McBopomofo for fcitx5
+URL:            https://github.com/openvanilla/fcitx5-mcbopomofo
+Source0:        %{url}/archive/refs/tags/%{version}/fcitx5-mcbopomofo-%{version}.tar.gz
 
-Requires: fcitx5
-Requires: fcitx5-configtool
-Requires: fcitx5-gtk
-Requires: fcitx5-qt
+BuildRequires:  gcc-c++
+BuildRequires:  gettext
+BuildRequires:  pkgconfig(Fcitx5Core)
+BuildRequires:  pkgconfig(Fcitx5Module)
+BuildRequires:  pkgconfig(Fcitx5Utils)
+BuildRequires:  pkgconfig(fmt)
+BuildRequires:  pkgconfig(icu-i18n)
+BuildRequires:  pkgconfig(json-c)
+
+Requires:       fcitx5
+Requires:       fcitx5-configtool
+Requires:       fcitx5-gtk
+Requires:       fcitx5-qt
 
 %description
-McBopomofo for fcitx5.
+McBopomofo for fcitx5
 
 %prep
 %autosetup -n %{name}-%{version}
 
 %build
-mkdir build
-pushd build
-cmake ../ -GNinja -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_BUILD_TYPE=Release
-ninja
-popd
+%cmake \
+    -GNinja \
+    -DBUILD_SHARED_LIBS:BOOL=OFF \
+    -DENABLE_TEST=Off
+%cmake_build
 
 %install
-pushd build
-DESTDIR=$RPM_BUILD_ROOT ninja install
-popd
+%cmake_install
+chmod a+x %{buildroot}/%{_datadir}/fcitx5/data/mcbopomofo-add-phrase-hook.sh
+%find_lang %{name}
 
 %files
 %{_libdir}/fcitx5/mcbopomofo.so
 %{_datadir}/fcitx5/addon/mcbopomofo.conf
-%{_datadir}/fcitx5/data/*
+%{_datadir}/fcitx5/data/mcbopomofo-add-phrase-hook.sh
+%{_datadir}/fcitx5/data/mcbopomofo-associated-phrases-v2.txt
+%{_datadir}/fcitx5/data/mcbopomofo-data-plain-bpmf.txt
+%{_datadir}/fcitx5/data/mcbopomofo-data.txt
+%{_datadir}/fcitx5/data/mcbopomofo-dictionary-service.json
 %{_datadir}/fcitx5/inputmethod/mcbopomofo.conf
 %{_datadir}/fcitx5/inputmethod/mcbopomofo-plain.conf
 %{_datadir}/icons/hicolor/*/apps/*.png
