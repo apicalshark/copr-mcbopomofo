@@ -11,6 +11,8 @@ Source0:        %{url}/archive/refs/tags/%{version}/fcitx5-mcbopomofo-%{version}
 
 BuildRequires:  gcc-c++
 BuildRequires:  gettext
+BuildRequires:  cmake
+BuildRequires:  extra-cmake-modules
 BuildRequires:  pkgconfig(Fcitx5Core)
 BuildRequires:  pkgconfig(Fcitx5Module)
 BuildRequires:  pkgconfig(Fcitx5Utils)
