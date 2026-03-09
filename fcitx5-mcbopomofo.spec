@@ -13,6 +13,7 @@ BuildRequires:  gcc-c++
 BuildRequires:  gettext
 BuildRequires:  cmake
 BuildRequires:  extra-cmake-modules
+BuildRequires:  ninja-build
 BuildRequires:  pkgconfig(Fcitx5Core)
 BuildRequires:  pkgconfig(Fcitx5Module)
 BuildRequires:  pkgconfig(Fcitx5Utils)
