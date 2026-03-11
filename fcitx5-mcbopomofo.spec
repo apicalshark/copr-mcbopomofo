@@ -42,13 +42,14 @@ McBopomofo for fcitx5
 %install
 %cmake_install
 chmod a+x %{buildroot}/%{_datadir}/fcitx5/data/mcbopomofo-add-phrase-hook.sh
-%find_lang %{name}
 
 %files
 %{_libdir}/fcitx5/mcbopomofo.so
 %{_datadir}/fcitx5/addon/mcbopomofo.conf
 %{_datadir}/fcitx5/data/mcbopomofo-add-phrase-hook.sh
 %{_datadir}/fcitx5/data/mcbopomofo-associated-phrases-v2.txt
+%{_datadir}/fcitx5/data/mcbopomofo-bpmfvs-pua.txt
+%{_datadir}/fcitx5/data/mcbopomofo-bpmfvs-variants.txt
 %{_datadir}/fcitx5/data/mcbopomofo-data-plain-bpmf.txt
 %{_datadir}/fcitx5/data/mcbopomofo-data.txt
 %{_datadir}/fcitx5/data/mcbopomofo-dictionary-service.json
