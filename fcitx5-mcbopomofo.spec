@@ -2,7 +2,7 @@
 %undefine       _enable_debug_packages
 
 Name:           fcitx5-mcbopomofo
-Version:        2.9.5
+Version: 3.0
 Release:        3
 License:        MIT
 Summary:        McBopomofo for fcitx5
