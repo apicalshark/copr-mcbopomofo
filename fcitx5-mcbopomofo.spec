@@ -1,13 +1,13 @@
-%global         debug_package %{nil}
-%undefine       _enable_debug_packages
+%global   debug_package %{nil}
+%undefine _enable_debug_packages
 
-Name:           fcitx5-mcbopomofo
+Name:    fcitx5-mcbopomofo
 Version: 3.0
-Release:        3
-License:        MIT
-Summary:        McBopomofo for fcitx5
-URL:            https://github.com/openvanilla/fcitx5-mcbopomofo
-Source0:        %{url}/archive/refs/tags/%{version}/fcitx5-mcbopomofo-%{version}.tar.gz
+Release: 1
+License: MIT
+Summary: McBopomofo for fcitx5
+URL:     https://github.com/openvanilla/fcitx5-mcbopomofo
+Source0: %{url}/archive/refs/tags/%{version}/fcitx5-mcbopomofo-%{version}.tar.gz
 
 BuildRequires:  gcc-c++
 BuildRequires:  gettext
